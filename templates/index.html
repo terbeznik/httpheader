@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>HTTP header</title>
+
+    <meta name="description" content="display http header">
+    <meta name="author" content="httpheader">
+
+    <link rel="stylesheet" href="static/normalize.css">
+    <link rel="stylesheet" href="static/skeleton.css">
+    <link rel="stylesheet" href="static/styles.css">
+  </head>
+
+<body>
+  <main class="container">
+      <h1>HTTP header</h1>
+      <a class="github-button" href="https://github.com/alexbennik/httpheader" aria-label="Star alexbennik/httpheader on GitHub">Star</a>
+  <hr>
+  <h4>Request header</h4>
+  <form>
+  {% for name, value in headers %}
+      <label for="{{ name }}">{{ name }}</label>
+      <input readonly onClick="this.select();" id="{{ name }}" class="u-full-width" type="text" value="{{ value }}">
+  {% endfor %}
+  </form>
+
+<hr>
+<h4>Usage</h4>
+<p>You can easily scrape the content. To get the values of the header, target the <b>css</b> class <code>.value</code> or specific values with id for example <code>#Host</code>.</p>
+<p>There's also an <b>JSON API.</b> The endpoint is <code>http://httpheader.pythonanywhere.com/api</code> and the response looks like this:</p>
+<pre>
+<code>{
+  "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+  "Accept-Encoding": "gzip, deflate, br",
+  "Accept-Language": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7",
+  "Cache-Control": "no-cache",
+  "Connection": "keep-alive",
+  "Cookie": "_xsrf=2|e24e33c8|71c459f153c3890fd90119693f03374e|1545917539; username-localhost-8888=\"2|1:0|10:1547313815|23:username-localhost-8888|44:NDFmNzVlMzQyMTI0NDkxMGIyMTIwNGMwYjUyOTAzNzk=|279fe0a91c337398d34308f9261b8411585fddcd7a833eb12ca09c66332ba2b8\"",
+  "Host": "localhost:5000",
+  "Pragma": "no-cache",
+  "Upgrade-Insecure-Requests": "1",
+  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+}</code>
+</pre>
+
+  </main>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>
