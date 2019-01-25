@@ -23,7 +23,7 @@
   <form>
   {% for name, value in headers %}
       <label for="{{ name }}">{{ name }}</label>
-      <input readonly onClick="this.select();" id="{{ name }}" class="u-full-width" type="text" value="{{ value }}">
+      <input readonly onClick="this.select();" id="{{ name }}" class="u-full-width values" type="text" value="{{ value }}">
   {% endfor %}
   </form>
 
